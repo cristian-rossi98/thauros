@@ -19,7 +19,7 @@ const IndexPage = () => {
     <>
       <MenuButton handleMenuActive={handleMenuActive} menuActive={menuActive} />
       {menuActive && <Header />}
-      <main className="py-24 px-8">
+      <main className="m-auto py-24 w-4/5 sm:w-3/5 md:w-2/4 lg:w-2/5">
         <section>
           <p className="text-justify">
             Thauros é um projeto com uma identidade sonora abstrata e marcante.
@@ -38,10 +38,12 @@ const IndexPage = () => {
             <FaVideo className="mr-2 text-xl" />
             <h1>Full Set</h1>
           </div>
-          <div className="flex justify-center mt-4">
+          <div id="iframe-container" className="flex justify-center mt-4">
             <iframe
-              width="312"
-              height="173.25"
+              // width="312"
+              // height="173.25"
+              width="100%"
+              height="100%"
               src="https://www.youtube.com/embed/OA_HCNQ8dWM"
               title="YouTube video player"
               frameborder="0"
@@ -57,7 +59,7 @@ const IndexPage = () => {
           </div>
         </section>
       </main>
-      <footer className="flex justify-center p-4 text-xs">
+      <footer className="absolute w-full bottom-0 flex justify-center p-4 text-xs">
         <p>© {year} Thauros</p>
       </footer>
     </>
