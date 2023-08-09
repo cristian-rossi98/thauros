@@ -124,8 +124,13 @@ const socialMedia = [
 
 const tracks = [
   {
-    title: "Existentital Coercion",
-    img: <StaticImage src="../images/covers/existentialcoercion.jpg" alt="" />,
+    title: "Thauros - Existentital Coercion (EP)",
+    img: (
+      <StaticImage
+        src="../images/covers/existentialcoercion-cover.jpg"
+        alt=""
+      />
+    ),
     linkSpotify:
       "https://open.spotify.com/intl-pt/album/4j7XOCho2C6v3dVgppp4LL?si=iLCvhFSlRtS-sNhglt2KfQ",
     linkYoutube:
@@ -133,6 +138,129 @@ const tracks = [
     linkSoundcloud: "https://on.soundcloud.com/GTcuZ",
     linkBeatport:
       "https://www.beatport.com/release/existential-coercion/4181981",
+    iframeLink:
+      "https://open.spotify.com/embed/album/4j7XOCho2C6v3dVgppp4LL?utm_source=generator&theme=0",
+    iframe: "",
+  },
+  {
+    title: "Thauros - Entheogen",
+    img: <StaticImage src="../images/covers/entheogen-cover.jpg" alt="" />,
+    linkSpotify:
+      "https://open.spotify.com/intl-pt/track/0QpEyexyV254OnLMgqpfLF?si=6eb35f1b49b44782",
+    linkYoutube: "https://youtu.be/kdP8qg45JOE",
+    linkSoundcloud: "https://on.soundcloud.com/dbdhM",
+    linkBeatport: "https://www.beatport.com/track/entheogen/17740312",
+    iframeLink:
+      "https://open.spotify.com/embed/track/0QpEyexyV254OnLMgqpfLF?utm_source=generator&theme=0",
+    iframe: "",
+  },
+  {
+    title: "Thauros - Tataki",
+    img: <StaticImage src="../images/covers/tataki-cover.jpg" alt="" />,
+    linkSpotify:
+      "https://open.spotify.com/intl-pt/track/2BMDEBOHRYndqAIemYWhJm?si=f9f1026118624ded",
+    linkYoutube: "https://youtu.be/4piIPSGaAVA",
+    linkSoundcloud: "https://on.soundcloud.com/gV5Ev",
+    linkBeatport: "https://www.beatport.com/release/tataki/4070272",
+    iframeLink:
+      "https://open.spotify.com/embed/track/2BMDEBOHRYndqAIemYWhJm?utm_source=generator&theme=0",
+    iframe: "",
+  },
+  {
+    title: "Jacob, Jilax - Art & Melody (Liøn & Thauros Remix)",
+    img: <StaticImage src="../images/covers/artmelody-cover.jpg" alt="" />,
+    linkSpotify: "",
+    linkYoutube: "https://youtu.be/eByO0ZRv4H4",
+    linkSoundcloud: "https://on.soundcloud.com/XxCyV",
+    linkBeatport: "",
+    iframeLink: "",
+    iframe: (
+      <div class="iframe-container">
+        <iframe
+          className="mt-8"
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/eByO0ZRv4H4"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    ),
+  },
+  {
+    title: "Thauros - Be Yours",
+    img: <StaticImage src="../images/covers/beyours-cover.jpg" alt="" />,
+    linkSpotify:
+      "https://open.spotify.com/intl-pt/track/7nd32aUH1mKj0BXUYYkSNd?si=f1aa1dd10ece404b",
+    linkYoutube: "https://youtu.be/L0kh9u0SlEM",
+    linkSoundcloud: "https://on.soundcloud.com/GmJJZ",
+    linkBeatport: "https://www.beatport.com/release/be-yours/3913991",
+    iframeLink:
+      "https://open.spotify.com/embed/track/7nd32aUH1mKj0BXUYYkSNd?utm_source=generator&theme=0",
+    iframe: "",
+  },
+  {
+    title: "Thauros - Lost",
+    img: <StaticImage src="../images/covers/lost-cover.jpg" alt="" />,
+    linkSpotify:
+      "https://open.spotify.com/intl-pt/track/0af9PjZ4PfCp18xsfWP6hs?si=3458d70176364111",
+    linkYoutube: "https://youtu.be/aZr3YUjCI8o",
+    linkSoundcloud: "https://on.soundcloud.com/35m6A",
+    linkBeatport: "https://www.beatport.com/release/lost/3875964",
+    iframeLink:
+      "https://open.spotify.com/embed/track/0af9PjZ4PfCp18xsfWP6hs?utm_source=generator&theme=0",
+    iframe: "",
+  },
+  {
+    title: "Billie Eilish - I Love You (Thauros Remix)",
+    img: <StaticImage src="../images/covers/iloveyou-cover.jpg" alt="" />,
+    linkSpotify: "",
+    linkYoutube: "https://youtu.be/V2LsluKqTt0",
+    linkSoundcloud: "https://on.soundcloud.com/GTcuZ",
+    linkBeatport: "",
+    iframeLink: "",
+    iframe: (
+      <div class="iframe-container">
+        <iframe
+          className="mt-8"
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/V2LsluKqTt0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    ),
+  },
+  {
+    title: "Depeche Mode - Enjoy The Silence (Thauros Remix)",
+    img: (
+      <StaticImage src="../images/covers/enjoythesilence-cover.jpg" alt="" />
+    ),
+    linkSpotify:
+      "https://open.spotify.com/intl-pt/track/5eyXuwGfnNSAw5zmRSmrj8?si=c6da9686bbe14cde",
+    linkYoutube: "https://youtu.be/nDDjC2d---o",
+    linkSoundcloud: "https://on.soundcloud.com/FrFPq",
+    linkBeatport: "",
+    iframeLink:
+      "https://open.spotify.com/embed/track/5eyXuwGfnNSAw5zmRSmrj8?utm_source=generator&theme=0",
+    iframe: "",
+  },
+  {
+    title: "Thauros - Hometown",
+    img: <StaticImage src="../images/covers/hometown-cover.jpg" alt="" />,
+    linkSpotify:
+      "https://open.spotify.com/intl-pt/track/6XZFWZKtOic8eteQRXm5xX?si=d7bf47a11d114685",
+    linkYoutube: "https://youtu.be/A_mAJmzYvfk",
+    linkSoundcloud: "https://on.soundcloud.com/st6pT",
+    linkBeatport: "",
+    iframeLink:
+      "https://open.spotify.com/embed/track/6XZFWZKtOic8eteQRXm5xX?utm_source=generator&theme=0",
+    iframe: "",
   },
 ];
 
@@ -141,6 +269,7 @@ const IndexPage = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [language, setLanguage] = useState("pt");
   const [modalOpen, setModalOpen] = useState(false);
+  const [track, setTrack] = useState([]);
 
   const handleMenuActive = () => {
     setMenuActive(!menuActive);
@@ -188,12 +317,19 @@ const IndexPage = () => {
     };
   }, []);
 
-  const openModal = () => {
+  const openModal = (track) => {
+    setTrack(track);
     setModalOpen(true);
   };
 
   const closeModal = () => {
     setModalOpen(false);
+  };
+
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains("modal-overlay")) {
+      closeModal();
+    }
   };
 
   return (
@@ -214,7 +350,7 @@ const IndexPage = () => {
             <FaVideo className="mr-2 text-xl" />
             <h1>Full Set</h1>
           </div>
-          <div id="iframe-container" className="flex justify-center mt-4">
+          <div class="iframe-container" className="flex justify-center mt-4">
             <iframe
               width="100%"
               height="100%"
@@ -230,10 +366,15 @@ const IndexPage = () => {
           <div className="flex flex-row items-center">
             <FaHeadphones className="mr-2 text-xl" />
             <h1>Music</h1>
+          </div>
+          <div className="mt-4">
             <Tracks
+              tracks={tracks}
+              track={track}
               openModal={openModal}
               modalOpen={modalOpen}
               closeModal={closeModal}
+              handleOverlayClick={handleOverlayClick}
             />
           </div>
         </section>

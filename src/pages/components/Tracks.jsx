@@ -2,13 +2,38 @@ import React from "react";
 
 import Track from "./Track";
 
-const Tracks = ({openModal, modalOpen, closeModal}) => {
+const Tracks = ({
+  tracks,
+  track,
+  openModal,
+  modalOpen,
+  closeModal,
+  handleOverlayClick,
+}) => {
   return (
     <>
-      <button onClick={openModal}>tracks</button>
-      <Track isOpen={modalOpen} onClose={closeModal} />
+      <ul className="flex flex-wrap justify-center">
+        {tracks &&
+          tracks.map((track, index) => (
+            <li
+              className="w-1/2"
+              key={index}
+              onClick={() => openModal(track, index)}
+            >
+              {track.img}
+            </li>
+          ))}
+      </ul>
+      {openModal && (
+        <Track
+          track={track}
+          isOpen={modalOpen}
+          onClose={closeModal}
+          handleOverlayClick={handleOverlayClick}
+        />
+      )}
     </>
-  )
-}
+  );
+};
 
 export default Tracks;
