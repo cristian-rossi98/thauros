@@ -1,10 +1,14 @@
 import React, { useCallback, useEffect, useState } from "react";
+
 import { StaticImage } from "gatsby-plugin-image";
+import toast, { Toaster } from "react-hot-toast";
 
 import Header from "./components/Header";
 import Description from "./components/Description";
+import Tracks from "./components/Tracks";
 import Footer from "./components/Footer";
 import MenuButton from "./components/MenuButton";
+import ToastCustom from "./components/ToastCustom";
 
 import { FaVideo, FaHeadphones } from "react-icons/fa";
 
@@ -118,10 +122,40 @@ const socialMedia = [
   },
 ];
 
+const tracks = [
+  {
+    title: "Existentital Coercion",
+    img: <StaticImage src="../images/covers/existentialcoercion.jpg" alt="" />,
+    linkSpotify:
+      "https://open.spotify.com/intl-pt/album/4j7XOCho2C6v3dVgppp4LL?si=iLCvhFSlRtS-sNhglt2KfQ",
+    linkYoutube:
+      "https://www.youtube.com/playlist?list=OLAK5uy_mfnmNIzCZh_TxAf0UzFzdPSpr7IjpEnBA",
+    linkSoundcloud: "https://on.soundcloud.com/GTcuZ",
+    linkBeatport:
+      "https://www.beatport.com/release/existential-coercion/4181981",
+  },
+];
+
 const IndexPage = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const [language, setLanguage] = useState('pt');
+  const [language, setLanguage] = useState("pt");
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleMenuActive = () => {
+    setMenuActive(!menuActive);
+  };
+
+  const handleLanguage = (lang) => {
+    setLanguage(lang);
+    lang === "pt"
+      ? toast("Idioma alterado!", {
+          icon: "🇧🇷",
+        })
+      : toast("Language changed!", {
+          icon: "🇺🇸",
+        });
+  };
 
   const handleScroll = useCallback(() => {
     if (window.scrollY > 35) {
@@ -144,16 +178,27 @@ const IndexPage = () => {
       : document.body.classList.remove("overflow-hidden");
   }, [menuActive]);
 
-  const handleMenuActive = () => {
-    setMenuActive(!menuActive);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ToastCustom(toast, language);
+    }, 10000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  const openModal = () => {
+    setModalOpen(true);
   };
 
-  const handleLanguage = (lang) => {
-    setLanguage(lang);
-  }
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <>
+      <Toaster />
       <MenuButton
         handleMenuActive={handleMenuActive}
         menuActive={menuActive}
@@ -185,6 +230,11 @@ const IndexPage = () => {
           <div className="flex flex-row items-center">
             <FaHeadphones className="mr-2 text-xl" />
             <h1>Music</h1>
+            <Tracks
+              openModal={openModal}
+              modalOpen={modalOpen}
+              closeModal={closeModal}
+            />
           </div>
         </section>
       </main>
