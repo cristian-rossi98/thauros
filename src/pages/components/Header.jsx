@@ -11,8 +11,8 @@ const Header = ({ socialMedia }) => {
               target="_blank"
               className="flex flex-row items-center"
             >
-              <div className="w-4 mr-4">
-                <img className="invert" src={social.img} alt={social.title} />
+              <div className="w-4 mr-4 flex items-center">
+                {social.img}
               </div>
               <h1 className="text-xl">{social.title}</h1>
             </a>

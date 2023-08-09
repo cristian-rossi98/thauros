@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -23,52 +24,52 @@ import "../styles/global.css";
 const socialMedia = [
   {
     title: "Instagram",
-    img: Instagram,
+    img: <StaticImage className="invert" src="../images/instagram.png" alt="instagram" />,
     link: "https://www.instagram.com/thaurosmusic/",
   },
   {
     title: "YouTube",
-    img: Youtube,
+    img: <StaticImage className="invert" src="../images/youtube.png" alt="youtube" />,
     link: "https://www.youtube.com/@thaurosmusic",
   },
   {
     title: "Spotify",
-    img: Spotify,
+    img: <StaticImage className="invert" src="../images/spotify.png" alt="spotify" />,
     link: "https://open.spotify.com/intl-pt/artist/7qEMajxlp8K1jcPXpI3oiI?si=8x2wPqf7R-2h0YvYssbUdA",
   },
   {
     title: "FaceBook",
-    img: Facebook,
+    img: <StaticImage className="invert" src="../images/facebook.png" alt="facebook" />,
     link: "https://www.facebook.com/thauros",
   },
   {
     title: "TikTok",
-    img: Tiktok,
+    img: <StaticImage className="invert" src="../images/tiktok.png" alt="tiktok" />,
     link: "https://www.tiktok.com/@thaurosmusic",
   },
   {
     title: "SoundCloud",
-    img: Soundcloud,
+    img: <StaticImage className="invert" src="../images/soundcloud.png" alt="soundcloud" />,
     link: "https://soundcloud.com/thaurosmusic",
   },
   {
     title: "Beatport",
-    img: Beatport,
+    img: <StaticImage className="invert" src="../images/beatport.png" alt="beatport" />,
     link: "https://www.beatport.com/artist/thauros/1082183",
   },
   {
     title: "Apple Music",
-    img: Apple,
+    img: <StaticImage className="invert" src="../images/apple.png" alt="apple" />,
     link: "https://music.apple.com/us/artist/thauros/1586617367",
   },
   {
     title: "Deezer",
-    img: Deezer,
+    img: <StaticImage className="invert" src="../images/deezer.png" alt="deezer" />,
     link: "https://www.deezer.com/br/artist/145994622",
   },
   {
     title: "Bookings",
-    img: Email,
+    img: <StaticImage className="invert" src="../images/email.png" alt="email" />,
     link: "https://wa.link/8u2ejm",
   },
 ];
