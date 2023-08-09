@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "./components/Header";
@@ -7,75 +7,140 @@ import MenuButton from "./components/MenuButton";
 
 import { FaVideo, FaHeadphones } from "react-icons/fa";
 
-import Instagram from "../images/instagram.png";
-import Facebook from "../images/facebook.png";
-import Soundcloud from "../images/soundcloud.png";
-import Spotify from "../images/spotify.png";
-import Tiktok from "../images/tiktok.png";
-import Youtube from "../images/youtube.png";
-import Apple from "../images/apple.png";
-import Beatport from "../images/beatport.png";
-import Deezer from "../images/deezer.png";
-import Dropbox from "../images/dropbox.png";
-import Email from "../images/email.png";
-
 import "../styles/global.css";
 
 const socialMedia = [
   {
     title: "Instagram",
-    img: <StaticImage className="invert" src="../images/instagram.png" alt="instagram" />,
+    img: (
+      <StaticImage
+        className="invert"
+        src="../images/instagram.png"
+        alt="instagram"
+      />
+    ),
     link: "https://www.instagram.com/thaurosmusic/",
   },
   {
     title: "YouTube",
-    img: <StaticImage className="invert" src="../images/youtube.png" alt="youtube" />,
+    img: (
+      <StaticImage
+        className="invert"
+        src="../images/youtube.png"
+        alt="youtube"
+      />
+    ),
     link: "https://www.youtube.com/@thaurosmusic",
   },
   {
     title: "Spotify",
-    img: <StaticImage className="invert" src="../images/spotify.png" alt="spotify" />,
+    img: (
+      <StaticImage
+        className="invert"
+        src="../images/spotify.png"
+        alt="spotify"
+      />
+    ),
     link: "https://open.spotify.com/intl-pt/artist/7qEMajxlp8K1jcPXpI3oiI?si=8x2wPqf7R-2h0YvYssbUdA",
   },
   {
     title: "FaceBook",
-    img: <StaticImage className="invert" src="../images/facebook.png" alt="facebook" />,
+    img: (
+      <StaticImage
+        className="invert"
+        src="../images/facebook.png"
+        alt="facebook"
+      />
+    ),
     link: "https://www.facebook.com/thauros",
   },
   {
     title: "TikTok",
-    img: <StaticImage className="invert" src="../images/tiktok.png" alt="tiktok" />,
+    img: (
+      <StaticImage className="invert" src="../images/tiktok.png" alt="tiktok" />
+    ),
     link: "https://www.tiktok.com/@thaurosmusic",
   },
   {
     title: "SoundCloud",
-    img: <StaticImage className="invert" src="../images/soundcloud.png" alt="soundcloud" />,
+    img: (
+      <StaticImage
+        className="invert"
+        src="../images/soundcloud.png"
+        alt="soundcloud"
+      />
+    ),
     link: "https://soundcloud.com/thaurosmusic",
   },
   {
     title: "Beatport",
-    img: <StaticImage className="invert" src="../images/beatport.png" alt="beatport" />,
+    img: (
+      <StaticImage
+        className="invert"
+        src="../images/beatport.png"
+        alt="beatport"
+      />
+    ),
     link: "https://www.beatport.com/artist/thauros/1082183",
   },
   {
     title: "Apple Music",
-    img: <StaticImage className="invert" src="../images/apple.png" alt="apple" />,
+    img: (
+      <StaticImage className="invert" src="../images/apple.png" alt="apple" />
+    ),
     link: "https://music.apple.com/us/artist/thauros/1586617367",
   },
   {
     title: "Deezer",
-    img: <StaticImage className="invert" src="../images/deezer.png" alt="deezer" />,
+    img: (
+      <StaticImage className="invert" src="../images/deezer.png" alt="deezer" />
+    ),
     link: "https://www.deezer.com/br/artist/145994622",
   },
   {
+    title: "Media Kit",
+    img: (
+      <StaticImage
+        className="invert"
+        src="../images/dropbox.png"
+        alt="dropbox"
+      />
+    ),
+    link: "https://www.dropbox.com/home/Thauros%20Presskit",
+  },
+  {
     title: "Bookings",
-    img: <StaticImage className="invert" src="../images/email.png" alt="email" />,
+    img: (
+      <StaticImage className="invert" src="../images/email.png" alt="email" />
+    ),
     link: "https://wa.link/8u2ejm",
   },
 ];
 
 const IndexPage = () => {
   const [menuActive, setMenuActive] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > 35) {
+      setHasScrolled(true);
+    } else {
+      setHasScrolled(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
+  useEffect(() => {
+    menuActive
+      ? document.body.classList.add("overflow-hidden")
+      : document.body.classList.remove("overflow-hidden");
+  }, [menuActive]);
 
   const handleMenuActive = () => {
     setMenuActive(!menuActive);
@@ -83,7 +148,11 @@ const IndexPage = () => {
 
   return (
     <>
-      <MenuButton handleMenuActive={handleMenuActive} menuActive={menuActive} />
+      <MenuButton
+        handleMenuActive={handleMenuActive}
+        menuActive={menuActive}
+        hasScrolled={hasScrolled}
+      />
       {menuActive && <Header socialMedia={socialMedia} />}
       <main className="m-auto py-24 w-4/5 sm:w-3/5 md:w-2/4 lg:w-2/5">
         <section>
@@ -106,15 +175,13 @@ const IndexPage = () => {
           </div>
           <div id="iframe-container" className="flex justify-center mt-4">
             <iframe
-              // width="312"
-              // height="173.25"
               width="100%"
               height="100%"
               src="https://www.youtube.com/embed/OA_HCNQ8dWM"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </section>

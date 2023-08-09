@@ -26,6 +26,7 @@ h1 {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
+  z-index: -1;
 }
 
 #iframe-container > iframe {
@@ -33,5 +34,13 @@ h1 {
   top: 0;
   left: 0;
   z-index: -1;
-  
+}
+
+.main-header {
+  background-color: transparent;
+  transition: background-color .3s ;
+}
+
+.main-header.scrolled {
+  background-color: rgba(3, 7, 17, 0.95);
 }
