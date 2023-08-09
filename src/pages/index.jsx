@@ -1,15 +1,80 @@
 import React, { useState } from "react";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import MenuButton from "./components/MenuButton";
 
 import { FaVideo, FaHeadphones } from "react-icons/fa";
 
+import Instagram from "../images/instagram.png";
+import Facebook from "../images/facebook.png";
+import Soundcloud from "../images/soundcloud.png";
+import Spotify from "../images/spotify.png";
+import Tiktok from "../images/tiktok.png";
+import Youtube from "../images/youtube.png";
+import Apple from "../images/apple.png";
+import Beatport from "../images/beatport.png";
+import Deezer from "../images/deezer.png";
+import Dropbox from "../images/dropbox.png";
+import Email from "../images/email.png";
+
 import "../styles/global.css";
+
+const socialMedia = [
+  {
+    title: "Instagram",
+    img: Instagram,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Youtube",
+    img: Youtube,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Spotify",
+    img: Spotify,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Facebook",
+    img: Facebook,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Tiktok",
+    img: Tiktok,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Soundcloud",
+    img: Soundcloud,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Beatport",
+    img: Beatport,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Apple",
+    img: Apple,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Deezer",
+    img: Deezer,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+  {
+    title: "Bookings",
+    img: Email,
+    link: "https://www.instagram.com/thaurosmusic/",
+  },
+];
 
 const IndexPage = () => {
   const [menuActive, setMenuActive] = useState(false);
-  const year = new Date().getFullYear();
 
   const handleMenuActive = () => {
     setMenuActive(!menuActive);
@@ -18,7 +83,7 @@ const IndexPage = () => {
   return (
     <>
       <MenuButton handleMenuActive={handleMenuActive} menuActive={menuActive} />
-      {menuActive && <Header />}
+      {menuActive && <Header socialMedia={socialMedia} />}
       <main className="m-auto py-24 w-4/5 sm:w-3/5 md:w-2/4 lg:w-2/5">
         <section>
           <p className="text-justify">
@@ -59,9 +124,7 @@ const IndexPage = () => {
           </div>
         </section>
       </main>
-      <footer className="absolute w-full bottom-0 flex justify-center p-4 text-xs">
-        <p>© {year} Thauros</p>
-      </footer>
+      <Footer />
     </>
   );
 };
@@ -71,7 +134,6 @@ export default IndexPage;
 export const Head = () => {
   return (
     <>
-      {/* <link rel="shortcut icon" href="../images/thauros-favicon.svg" type="image/x-icon" /> */}
       <title>THAUROS</title>
     </>
   );
