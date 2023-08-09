@@ -27,49 +27,49 @@ const socialMedia = [
     link: "https://www.instagram.com/thaurosmusic/",
   },
   {
-    title: "Youtube",
+    title: "YouTube",
     img: Youtube,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://www.youtube.com/@thaurosmusic",
   },
   {
     title: "Spotify",
     img: Spotify,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://open.spotify.com/intl-pt/artist/7qEMajxlp8K1jcPXpI3oiI?si=8x2wPqf7R-2h0YvYssbUdA",
   },
   {
-    title: "Facebook",
+    title: "FaceBook",
     img: Facebook,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://www.facebook.com/thauros",
   },
   {
-    title: "Tiktok",
+    title: "TikTok",
     img: Tiktok,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://www.tiktok.com/@thaurosmusic",
   },
   {
-    title: "Soundcloud",
+    title: "SoundCloud",
     img: Soundcloud,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://soundcloud.com/thaurosmusic",
   },
   {
     title: "Beatport",
     img: Beatport,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://www.beatport.com/artist/thauros/1082183",
   },
   {
-    title: "Apple",
+    title: "Apple Music",
     img: Apple,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://music.apple.com/us/artist/thauros/1586617367",
   },
   {
     title: "Deezer",
     img: Deezer,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://www.deezer.com/br/artist/145994622",
   },
   {
     title: "Bookings",
     img: Email,
-    link: "https://www.instagram.com/thaurosmusic/",
+    link: "https://wa.link/8u2ejm",
   },
 ];
 
