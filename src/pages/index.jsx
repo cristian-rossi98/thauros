@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "./components/Header";
+import Description from "./components/Description";
 import Footer from "./components/Footer";
 import MenuButton from "./components/MenuButton";
 
@@ -120,6 +121,7 @@ const socialMedia = [
 const IndexPage = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [language, setLanguage] = useState('pt');
 
   const handleScroll = useCallback(() => {
     if (window.scrollY > 35) {
@@ -146,6 +148,10 @@ const IndexPage = () => {
     setMenuActive(!menuActive);
   };
 
+  const handleLanguage = (lang) => {
+    setLanguage(lang);
+  }
+
   return (
     <>
       <MenuButton
@@ -153,21 +159,11 @@ const IndexPage = () => {
         menuActive={menuActive}
         hasScrolled={hasScrolled}
       />
-      {menuActive && <Header socialMedia={socialMedia} />}
+      {menuActive && (
+        <Header socialMedia={socialMedia} handleLanguage={handleLanguage} />
+      )}
       <main className="m-auto py-24 w-4/5 sm:w-3/5 md:w-2/4 lg:w-2/5">
-        <section>
-          <p className="text-justify">
-            Thauros é um projeto com uma identidade sonora abstrata e marcante.
-            Traz em seu set uma imersão sônica e cibernética única, com uma
-            fusão de vertentes, transportando você para uma dimensão futurista,
-            onde os sons se fundem em harmonia perfeita, criando uma experiência
-            sonora inovadora e autoral.
-            <br></br>
-            <br></br>
-            Difícil de explicar, não se surpreenda se você não entender nada mas
-            ainda assim quiser ouvir mais!
-          </p>
-        </section>
+        <Description language={language} />
         <section className="mt-8">
           <div className="flex flex-row items-center">
             <FaVideo className="mr-2 text-xl" />
