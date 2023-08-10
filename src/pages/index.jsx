@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import MenuButton from "./components/MenuButton";
 import ToastCustom from "./components/ToastCustom";
 
+import useScrollBlock from "./components/functions";
+
 import { FaVideo, FaHeadphones } from "react-icons/fa";
 
 import "../styles/global.css";
@@ -268,6 +270,7 @@ const IndexPage = () => {
   const [language, setLanguage] = useState("pt");
   const [modalOpen, setModalOpen] = useState(false);
   const [track, setTrack] = useState([]);
+  const [blockScroll, allowScroll] = useScrollBlock();
 
   const handleMenuActive = () => {
     setMenuActive(!menuActive);
@@ -301,9 +304,11 @@ const IndexPage = () => {
 
   useEffect(() => {
     menuActive
-      ? document.body.classList.add("overflow-hidden")
-      : document.body.classList.remove("overflow-hidden");
-  }, [menuActive]);
+    ? blockScroll()
+    : allowScroll()
+      // ? document.body.classList.add("overflow-hidden")
+      // : document.body.classList.remove("overflow-hidden");
+  }, [menuActive, blockScroll, allowScroll]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
