@@ -177,7 +177,7 @@ const tracks = [
     linkBeatport: "",
     iframeLink: "",
     iframe: (
-      <div class="iframe-container">
+      <div className="iframe-container">
         <iframe
           width="100%"
           height="100%"
@@ -223,7 +223,7 @@ const tracks = [
     linkBeatport: "",
     iframeLink: "",
     iframe: (
-      <div class="iframe-container">
+      <div className="iframe-container">
         <iframe
           width="100%"
           height="100%"
@@ -319,6 +319,7 @@ const IndexPage = () => {
   }, [language]);
 
   const openModal = (track) => {
+    console.log('open');
     setTrack(track);
     setModalOpen(true);
   };
@@ -351,7 +352,7 @@ const IndexPage = () => {
             <FaVideo className="mr-2 text-xl" />
             <h1>Full Set</h1>
           </div>
-          <div class="iframe-container" className="flex justify-center mt-4">
+          <div className="iframe-container flex justify-center mt-4">
             <iframe
               width="100%"
               height="100%"

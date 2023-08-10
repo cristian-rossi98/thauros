@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const Header = ({ socialMedia, handleLanguage }) => {
   return (
-    <header className="h-screen w-screen fixed bg-gray-950 flex flex-col items-center py-24 z-0">
+    <header className="h-screen w-screen fixed bg-gray-950 flex flex-col items-center py-24 z-40">
       <div>
         {socialMedia &&
           socialMedia.map((social, index) => (
@@ -19,7 +19,7 @@ const Header = ({ socialMedia, handleLanguage }) => {
               </a>
             </li>
           ))}
-        <div className="flex justify-between">
+        <div className="flex justify-between mt-8">
           <button onClick={() => handleLanguage('pt')} className="flex items-center justify-center bg-blue-900 p-2 mr-1 w-1/2 rounded-md hover:bg-blue-950">
             <StaticImage className="w-4 mr-1" src="../../images/pt-flag.png" alt=""/>
             <span>PT</span>
