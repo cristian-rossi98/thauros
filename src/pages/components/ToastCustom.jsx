@@ -50,7 +50,7 @@ const ToastCustom = (lang) => {
             </div>
           ),
           {
-            duration: 4500,
+            duration: 5000,
           }
         )}
     </>

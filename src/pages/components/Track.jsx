@@ -11,7 +11,7 @@ const Track = ({ track, isOpen, onClose, handleOverlayClick }) => {
   }
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal">
+      <div className="modal w-11/12 sm:w-9/12 md:w-7/12 lg:w-5/12">
         <div className="flex justify-between mb-4">
           <h1 className="text-sm">{track.title}</h1>
           <button className="modal-close" onClick={onClose}>
@@ -19,18 +19,20 @@ const Track = ({ track, isOpen, onClose, handleOverlayClick }) => {
           </button>
         </div>
         {track.iframeLink ? (
-          <iframe
-            className="rounded-md"
-            src={track.iframeLink}
-            width="100%"
-            height="192"
-            frameborder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
+          <div className="flex justify-center">
+            <iframe
+              className="rounded-md"
+              src={track.iframeLink}
+              width="100%"
+              height="192"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
         ) : (
-          <div className="h-48">{track.iframe}</div>
+          <div className="h-48 mb-20">{track.iframe}</div>
         )}
         <div className="flex justify-center">
           {track.linkSpotify && (
@@ -38,7 +40,7 @@ const Track = ({ track, isOpen, onClose, handleOverlayClick }) => {
               href={track.linkSpotify}
               target="_blank"
               rel="noreferrer"
-              className="w-8 mr-4"
+              className="w-8 mr-4 transition duration-300 hover:scale-110"
             >
               <StaticImage className="invert" src="../../images/spotify.png" />
             </a>
@@ -48,7 +50,7 @@ const Track = ({ track, isOpen, onClose, handleOverlayClick }) => {
               href={track.linkBeatport}
               target="_blank"
               rel="noreferrer"
-              className="w-8 mr-4"
+              className="w-8 mr-4 transition duration-300 hover:scale-110"
             >
               <StaticImage className="invert" src="../../images/beatport.png" />
             </a>
@@ -58,7 +60,7 @@ const Track = ({ track, isOpen, onClose, handleOverlayClick }) => {
               href={track.linkYoutube}
               target="_blank"
               rel="noreferrer"
-              className="w-8 mr-4"
+              className="w-8 mr-4 transition duration-300 hover:scale-110"
             >
               <StaticImage className="invert" src="../../images/youtube.png" />
             </a>
@@ -68,7 +70,7 @@ const Track = ({ track, isOpen, onClose, handleOverlayClick }) => {
               href={track.linkSoundcloud}
               target="_blank"
               rel="noreferrer"
-              className="w-8"
+              className="w-8 transition duration-300 hover:scale-110"
             >
               <StaticImage
                 className="invert"
