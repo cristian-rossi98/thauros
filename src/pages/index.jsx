@@ -345,7 +345,10 @@ const IndexPage = () => {
       {menuActive && (
         <Header socialMedia={socialMedia} handleLanguage={handleLanguage} />
       )}
-      <main className="m-auto py-24 w-4/5 sm:w-3/5 md:w-2/4 lg:w-2/5">
+      <div className="hidden md:block">
+        <Header socialMedia={socialMedia} handleLanguage={handleLanguage} />
+      </div>
+      <main className="m-auto py-24 w-4/5 sm:w-3/5 md:w-2/4 lg:w-2/5 md:py-4">
         <Description language={language} />
         <section className="mt-8">
           <div className="flex flex-row items-center">
