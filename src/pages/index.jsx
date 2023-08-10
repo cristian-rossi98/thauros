@@ -177,7 +177,6 @@ const tracks = [
     iframe: (
       <div class="iframe-container">
         <iframe
-          className="mt-8"
           width="100%"
           height="100%"
           src="https://www.youtube.com/embed/eByO0ZRv4H4"
@@ -224,7 +223,6 @@ const tracks = [
     iframe: (
       <div class="iframe-container">
         <iframe
-          className="mt-8"
           width="100%"
           height="100%"
           src="https://www.youtube.com/embed/V2LsluKqTt0"

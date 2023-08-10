@@ -16,7 +16,7 @@ const Tracks = ({
         {tracks &&
           tracks.map((track, index) => (
             <li
-              className="w-1/2"
+              className="w-1/2 z-[-1]"
               key={index}
               onClick={() => openModal(track, index)}
             >
