@@ -1,7 +1,8 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import toast from "react-hot-toast";
 
-const ToastCustom = (toast, lang) => {
+const ToastCustom = (lang) => {
   const description =
     lang === "pt" ? "Já assistiu meu full set?" : "Have you watch my full set?";
   const watch = lang === "pt" ? "Assistir agora" : "Watch now";
