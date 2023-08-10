@@ -7,6 +7,11 @@ const ToastCustom = (lang) => {
     lang === "pt" ? "Já assistiu meu full set?" : "Have you watch my full set?";
   const watch = lang === "pt" ? "Assistir agora" : "Watch now";
 
+  const handleWatch = (t) => {
+    window.open("https://youtu.be/OA_HCNQ8dWM", "_blank");
+    toast.dismiss(t.id);
+  };
+
   return (
     <>
       {toast &&
@@ -20,11 +25,6 @@ const ToastCustom = (lang) => {
               <div className="flex-1 w-0 p-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 pt-0.5">
-                    {/* <img
-                  className="h-10 w-10 rounded-full"
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=6GHAjsWpt9&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                  alt=""
-                /> */}
                     <StaticImage
                       src="../../images/profile.jpg"
                       alt="Profile"
@@ -38,14 +38,12 @@ const ToastCustom = (lang) => {
                 </div>
               </div>
               <div className="flex border-l border-gray-200">
-                <a
-                  href="https://youtu.be/OA_HCNQ8dWM"
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  onClick={() => handleWatch(t)}
                   className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500"
                 >
                   {watch}
-                </a>
+                </button>
               </div>
             </div>
           ),
