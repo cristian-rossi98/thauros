@@ -346,7 +346,11 @@ const IndexPage = () => {
         <Header socialMedia={socialMedia} handleLanguage={handleLanguage} />
       )}
       <div className="hidden md:block">
-        <Header socialMedia={socialMedia} handleLanguage={handleLanguage} />
+        <Header
+          socialMedia={socialMedia}
+          handleLanguage={handleLanguage}
+          language={language}
+        />
       </div>
       <main className="m-auto py-24 w-4/5 sm:w-3/5 md:w-2/4 lg:w-2/5 md:py-4">
         <Description language={language} />

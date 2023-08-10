@@ -1,7 +1,10 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
-const Header = ({ socialMedia, handleLanguage }) => {
+const Header = ({ socialMedia, handleLanguage, language }) => {
+  const ptClass = `w-4 mr-1 md:w-8 ${language === 'en' && 'md:grayscale md:hover:grayscale-0 md:transition md:duration-300'}`;
+  const enClass = `w-4 mr-1 md:w-8 ${language === 'pt' && 'md:grayscale md:hover:grayscale-0 md:transition md:duration-300'}`;
+
   return (
     <>
       {/* <header className="h-screen w-screen fixed bg-gray-950 flex flex-col items-center py-24 z-40 overflow-y-auto">
@@ -32,28 +35,28 @@ const Header = ({ socialMedia, handleLanguage }) => {
                 </li>
               ))}
           </div>
-          <div className="flex justify-between mt-8">
+          <div className="flex justify-between mt-8 md:justify-end md:mt-2">
             <button
               onClick={() => handleLanguage("pt")}
-              className="flex items-center justify-center bg-blue-900 p-2 mr-1 w-1/2 rounded-md hover:bg-blue-950"
+              className="flex items-center justify-center bg-blue-900 p-2 mr-1 w-1/2 rounded-md hover:bg-blue-950 md:bg-transparent md:hover:bg-transparent md:w-12 md:p-0 md:mr-0 md:justify-end"
             >
               <StaticImage
-                className="w-4 mr-1"
+                className={ptClass}
                 src="../../images/pt-flag.png"
                 alt=""
               />
-              <span>PT</span>
+              <span className="md:hidden">PT</span>
             </button>
             <button
               onClick={() => handleLanguage("en")}
-              className="flex items-center justify-center bg-blue-900 p-2 ml-1 w-1/2 rounded-md hover:bg-blue-950"
+              className="flex items-center justify-center bg-blue-900 p-2 ml-1 w-1/2 rounded-md hover:bg-blue-950 md:bg-transparent md:hover:bg-transparent md:w-12 md:p-0 md:mr-0 md:justify-end"
             >
               <StaticImage
-                className="w-4 mr-1"
+                className={enClass}
                 src="../../images/en-flag.png"
                 alt=""
               />
-              <span>EN</span>
+              <span className="md:hidden">EN</span>
             </button>
           </div>
         </div>
