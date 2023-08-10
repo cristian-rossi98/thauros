@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const Header = ({ socialMedia, handleLanguage }) => {
   return (
-    <header className="h-screen w-screen fixed bg-gray-950 flex flex-col items-center py-24 z-40">
+    <header className="h-screen w-screen fixed bg-gray-950 flex flex-col items-center py-24 z-40 overflow-y-auto">
       <div>
         {socialMedia &&
           socialMedia.map((social, index) => (
