@@ -24,7 +24,7 @@ const Header = ({ socialMedia, handleLanguage }) => {
                     rel="noreferrer"
                     className="flex flex-row items-center"
                   >
-                    <div className="w-6 mr-4 flex items-center md:mx-2 xl:mx-3.5 md:w-12">
+                    <div className="w-6 mr-4 flex items-center md:mx-2 xl:mx-3.5 md:w-12 transition duration-300 hover:scale-110">
                       {social.img}
                     </div>
                     <h1 className="text-2xl md:hidden">{social.title}</h1>
